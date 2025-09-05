@@ -2201,10 +2201,10 @@ input, select, textarea {
 			min-width: 10rem;
 		}
 
-			.panel > *.color0 {
-				background-image: url(../../images/overlay.png), linear-gradient(45deg, #120101 10%, #6f1112 60%, #ff0000);
-				background-size: 128px 128px, auto;
-			}
+		.panel > *.color0 {
+			background-image: url(../../images/overlay.png), linear-gradient(180deg, #120101 30%, #6f1112 80%, #ff0000);
+			background-size: 128px 128px, auto;
+		}
 
 			.panel > *.color1 {
 				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
