@@ -68,12 +68,15 @@ function initSubmitContact() {
             const formData = $form.serialize();
 
             $.ajax({
-                url: $form.attr('action') || 'assets/php/submit-contact.php',
+                url: $form.attr('action'),
                 type: 'POST',
                 data: formData,
                 dataType: 'json',
+                headers: {
+                    'Accept': 'application/json'
+                },
                 success: function(response) {
-                    if (response.status === 'success') {
+                    if (response.ok) { // Formspree uses 'ok' instead of 'status'
                         $success.removeClass('hidden');
                         $form[0].reset();
                         $('.selected-text').text("Project Type");
@@ -88,8 +91,9 @@ function initSubmitContact() {
                         }, 3000);
                     }
                 },
-                error: function() {
+                error: function(xhr, status, error) {
                     $error.removeClass('hidden');
+                    console.error("Formspree Error: ", error);
                     setTimeout(() => {
                         $error.addClass('hidden');
                     }, 3000);
