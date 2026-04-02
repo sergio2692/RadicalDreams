@@ -3224,3 +3224,20 @@ html[lang="ja"] .contact-cta-text-container {
         margin-top: 0px;
     }
 }
+
+/* Responsive Lang Switcher */
+@media screen and (max-width: 991.98px) {
+    .lang-switch-desktop {
+        display: none !important;
+    }
+}
+@media screen and (min-width: 992px) {
+    .sidebar-lang-container {
+        display: none !important;
+    }
+}
+.sidebar-lang-container .lang-switch-container {
+    margin-left: 25px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
