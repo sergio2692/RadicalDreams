@@ -274,21 +274,29 @@ function initCtaHighlightVideo() {
 
 
 function initProjectHeading() {
-    const $heading = $(".project-section-heading");
-    if (!$heading.length) return;
+    const $containers = $(".project-heading-container");
+    if (!$containers.length) return;
 
-    let lastScrollTop = $(window).scrollTop();
+    $containers.each(function () {
+        const $headingEl = $(this).find(".project-section-heading");
+        const $content = $(this).next(".project-content-container");
 
-    $(window).on("scroll", function () {
-        const currentScroll = $(this).scrollTop();
+        if (!$content.length || !$headingEl.length) return;
 
-        if (currentScroll > lastScrollTop) {
-            $heading.addClass("is-hidden");
-        } else {
-            $heading.removeClass("is-hidden");
-        }
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    $headingEl.removeClass("is-hidden");
+                } else {
+                    $headingEl.addClass("is-hidden");
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: "0px 0px -10% 0px"
+        });
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        observer.observe($content[0]);
     });
 }
 
