@@ -29,7 +29,10 @@
         display: none;
     }
     .section-core-service{
-        padding: 120px 20px 515px 20px;
+        padding: 100px 20px 60px 20px;
+    }
+    .section-atlas{
+        padding-top: 60px;
     }
     .section-cta-contact{
         padding: 0px 20px 0px 20px;
@@ -290,6 +293,9 @@
         text-align: center;
         align-items: center;
     }
+    html[lang="en"] .glitch-heading.is-decoding::before{
+        left: -0.3em;
+    }
     .home-avatar-container{
         width: 100%;
         flex-direction: column-reverse;
@@ -348,7 +354,11 @@
         margin-right: 33px;
     }
     .section-core-service{
-        padding: 120px 20px 263px 20px;
+        padding: 80px 20px 40px 20px;
+    }
+    .section-atlas{
+        padding-top: 40px;
+        padding-bottom: 80px;
     }
     .card-core-service{
         width: 100%;
