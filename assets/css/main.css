@@ -1325,11 +1325,6 @@ ul{
     margin-left: -15px;
 }
 
-.home-divider{
-    width: 100%;
-    border-bottom: 3px solid var(--primary);
-}
-
 .banner-inner {
     position: relative;
     padding: 180px 20px 120px 20px;
